@@ -35,6 +35,9 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status'
 
+# auto-completion script
+source ~/dotfiles/git-completion.bash
+
 # Git branch in prompt.
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
