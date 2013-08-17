@@ -1,0 +1,11 @@
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    di = diff
+[color]
+	ui = auto
+[user]
+	email = shevnv@yandex.ru
+	name = Nikolay Shevchenko
