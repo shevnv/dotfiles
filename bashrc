@@ -19,7 +19,6 @@ alias egrep='egrep --color=auto'
 
 # ssh
 alias ssh='ssh -A'
-alias hetzner='ssh hetzner'
 
 # git
 alias git st='git status'
