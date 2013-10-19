@@ -1,0 +1,116 @@
+# Unix
+if [[ $PLATFORM == 'Linux' ]]; then
+    alias ll='ls -lh --color=auto'
+    alias lla='ls -lAh --color=auto'
+    alias l='ls -1 --color=auto'
+else
+    alias ll='ls -lhG'
+    alias lla='ls -lAhG'
+    alias l='ls -1G'
+fi
+
+# ssh
+alias ssh='ssh -A'
+
+# grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias md='mkdir -p'
+alias .='pwd'
+alias '..'='cd ..'
+alias '...'='cd ..; cd ..'
+alias '....'='cd ..; cd ..; cd ..'
+alias '.4'='cd ..; cd ..; cd ..; cd ..'
+alias '.5'='cd ..; cd ..; cd ..; cd ..; cd ..'
+alias ss='cd static'
+alias sn='cd ../neo2'
+alias sm='cd ../mail'
+
+# get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4 | less'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+
+# get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3 | less'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+
+alias m='make'
+
+# alias mr='make LANGS=ru'
+function ml(){
+    if [[ ! $* ]]; then
+        make LANGS=ru
+    else
+        make LANGS="$*"
+    fi
+}
+
+# alias mn='make THEMES=blue PROJECTS="boot jane"'
+alias mna='make PROJECTS="boot jane"'
+function mn(){
+    if [[ ! $* ]]; then
+        make THEMES=blue PROJECTS="boot jane"
+    else
+        make THEMES="$*" PROJECTS="boot jane"
+    fi
+}
+
+# alias mm='make THEMES=blue PROJECTS=mail'
+alias mma='make PROJECTS=mail'
+function mm(){
+    if [[ ! $* ]]; then
+        make THEMES=blue PROJECTS=mail
+    else
+        make THEMES="$*" PROJECTS=mail
+    fi
+}
+
+# Vim
+alias v='vim -p'
+function vg(){
+    ft=${2:-"*"}
+    vim -p +/$1 `git grep "$1" | awk -F ':' '{print $1}' | sort | uniq -c | sort -rn | awk '{print $2}' | egrep "*.$ft"`
+}
+
+# open git status m-files in vim
+alias gv='vim -p `git ls-files -m`'
+# Git
+alias gc='git commit'
+alias gap='git add -p'
+alias gr='git grep'
+alias gcl='git clone'
+
+# Commit pending changes and quote all args as message
+function gg() {
+    git commit -avm "$*"
+}
+alias gco='git checkout'
+alias gd='git diff'
+alias gl='git log'
+alias gll='git log --oneline --abbrev-commit --all --graph --decorate --color'
+alias gf='git fetch'
+alias gu='git pull --rebase'
+alias gus='git pull --rebase ; git submodule update --init'
+alias gsu='git submodule update --init'
+alias up='git stash; gus; git stash pop'
+alias gp='git push'
+alias g='git status'
+grc(){
+     git log --first-parent --format=tformat:' * %s (%an)' --since="`fgrep -m 1 ' -- ' ChangeLog | awk -F '>' '{print($2)}' | xargs --null date -d`"
+}
+
+vcprompt ()
+{
+    local b="$(git symbolic-ref HEAD 2>/dev/null)";
+    if [ -n "$b" ]; then
+        local branch=${b##refs/heads/};
+
+        if [ "$branch" = "master" ]; then
+            printf "%s " "m";
+        else
+            printf "%s " $branch;
+        fi
+    fi
+}

@@ -1,0 +1,4 @@
+export LANG="en_US.UTF-8"
+export PATH=$HOME/.bin:$HOME/node_modules/.bin:/usr/local/sbin:$PATH
+export EDITOR=vim
+export PLATFORM=`uname`
