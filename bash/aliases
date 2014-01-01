@@ -27,6 +27,9 @@ alias '.5'='cd ..; cd ..; cd ..; cd ..; cd ..'
 alias ss='cd static'
 alias sn='cd ../neo2'
 alias sm='cd ../mail'
+
+# tmux
+alias tmux='TERM=screen-256color tmux'
 alias ts='tmux attach || tmux new'
 
 # get top process eating memory
