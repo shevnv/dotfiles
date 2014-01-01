@@ -27,6 +27,7 @@ alias '.5'='cd ..; cd ..; cd ..; cd ..; cd ..'
 alias ss='cd static'
 alias sn='cd ../neo2'
 alias sm='cd ../mail'
+alias ts='tmux attach || tmux new'
 
 # get top process eating memory
 alias psmem='ps auxf | sort -nr -k 4 | less'
