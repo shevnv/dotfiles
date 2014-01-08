@@ -1,7 +1,7 @@
 VIM_DIR=~/dotfiles
 
 # Clone my vimrc
-git clone git://github.com/Panya/dotvim.git $VIM_DIR
+git clone git://github.com/shevnv/dotfiles.git $VIM_DIR
 cd $VIM_DIR
 
 # Update Pathogen bundle
