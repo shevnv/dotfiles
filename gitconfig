@@ -2,3 +2,6 @@
     editor = vim
 [color]
     ui = always
+[user]
+	email = shevnv@gmail.com
+	name = Nikolay Shevchenko
