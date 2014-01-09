@@ -1,10 +1,10 @@
 DIR=~/dotfiles
 
 # Backup old .vim
-for i in ~/.bashrc ~/.gitconfig ~/.tmux.conf $DIR; do [ -e $i ] && echo 'mv $i' && mv $i $i.old; done
+for i in ~/.bashrc ~/.gitconfig ~/.tmux.conf $DIR; do [ -e $i ] && echo "mv $i $i.old" && mv $i $i.old; done
 
 # Clone my vimrc
-git clone git@github.com:shevnv/dotfiles.git $DIR
+git clone https://github.com/shevnv/dotfiles.git $DIR
 cd $DIR
 
 # Update Pathogen bundle
