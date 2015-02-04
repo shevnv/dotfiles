@@ -6,4 +6,4 @@
 	email = shevnv@gmail.com
 	name = Nikolay Shevchenko
 [push]
-	default = simple
+	default = current
