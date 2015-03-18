@@ -18,7 +18,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 alias md='mkdir -p'
-alias .='pwd'
+# alias .='pwd'
 alias '..'='cd ..'
 alias '...'='cd ..; cd ..'
 alias '....'='cd ..; cd ..; cd ..'
@@ -55,7 +55,7 @@ function ml(){
 alias mna='make PROJECTS="boot jane"'
 function mn(){
     if [[ ! $* ]]; then
-        make THEMES=blue PROJECTS="boot jane"
+        make THEMES=colorful PROJECTS="boot jane"
     else
         make THEMES="$*" PROJECTS="boot jane"
     fi
@@ -65,7 +65,7 @@ function mn(){
 alias mma='make PROJECTS=mail'
 function mm(){
     if [[ ! $* ]]; then
-        make THEMES=blue PROJECTS=mail
+        make THEMES=colorful PROJECTS=mail
     else
         make THEMES="$*" PROJECTS=mail
     fi
