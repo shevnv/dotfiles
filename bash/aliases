@@ -71,6 +71,10 @@ function mm(){
     fi
 }
 
+function ns(){
+    PORT=$2 node $1
+}
+
 # Vim
 alias v='vim -p'
 function vg(){
