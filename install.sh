@@ -15,3 +15,6 @@ for i in bashrc gitconfig tmux.conf; do ln -s $DIR/$i ~/.$i; done
 
 # Cleanup
 git clean -fd
+
+# install vim config from panya
+curl https://raw.githubusercontent.com/Panya/dotvim/master/bootstrap.sh -o - | sh
