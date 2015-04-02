@@ -71,6 +71,10 @@ function mm(){
     fi
 }
 
+function psg(){
+    ps -aux | grep $1
+}
+
 function ns(){
     PORT=$2 node $1
 }
