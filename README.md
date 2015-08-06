@@ -3,4 +3,4 @@ dotfiles
 
 simple install
 
-"curl https://github.com/shevnv/dotfiles/raw/master/install.sh -o - | sh"
+"curl https://raw.githubusercontent.com/shevnv/dotfiles/master/install.sh -o - | sh"
