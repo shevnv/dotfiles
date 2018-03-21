@@ -99,6 +99,11 @@ alias gcl='git clone'
 function gg() {
     git commit -m "$*"
 }
+
+function gtd() {
+    git tag -d $1
+    git push --delete origin $1
+}
 alias gco='git checkout'
 alias gd='git diff'
 alias gl='git log'
