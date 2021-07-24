@@ -3,7 +3,14 @@
 [color]
     ui = always
 [user]
-	email = shevnv@gmail.com
+	email = shevnv@yandex-team.ru
 	name = Nikolay Shevchenko
 [push]
 	default = current
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge --skip %f
+	process = git-lfs filter-process --skip
+	required = true
+[lfs "https://github.yandex-team.ru/"]
+	locksverify = false
